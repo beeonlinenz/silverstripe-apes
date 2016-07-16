@@ -210,11 +210,11 @@ class APES extends DataExtension {
 			return;
 		}
 
-		// Only update members which are subscribed
-		if(!$this->isSubscribed()) return;
-
-		// Send subscription update to mailchimp
-		$this->subscribeMailChimpUser();
+        // Only subscribe/update members who are not subscribed or not unsubscribed (subscribed or pending)
+        if (!$this->getListStatus() || !$this->isUnsubscribed()) {
+        // Send subscription update to mailchimp
+            $this->subscribeMailChimpUser();
+        }
 		
 	}
 
