@@ -24,7 +24,7 @@ class APES extends DataExtension {
 	 *
 	 * @var type
 	 */
-	private static $double_optin = true;
+	private static $double_optin = false;
 
 	/**
 	 * Mailchimp list ID
